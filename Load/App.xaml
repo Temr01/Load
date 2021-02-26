@@ -1,0 +1,11 @@
+﻿<Application x:Class="Load.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Load"
+             StartupUri="Menu.xaml">
+    <Application.Resources>
+        <BitmapImage x:Key="binacle" UriSource="image/binacle.png" />
+        <BitmapImage x:Key="cancel" UriSource="image/cancel.png" />
+        <BitmapImage x:Key="add" UriSource="image/add.png" />
+    </Application.Resources>
+</Application>

@@ -1,0 +1,78 @@
+﻿<Page x:Class="Load.Pages.Student"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Load.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Студенты" FontSize="18" Width="910" Height="650" Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5">
+                    <TextBlock Text="Студент: " Margin="0,0,8,0"/>
+                    <TextBox x:Name="StudentSearch" Width="200" Margin="0,0,30,0" TextChanged="StudentSearch_TextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                    <TextBlock Text="Группа: " Margin="0,0,8,0"/>
+                    <ComboBox x:Name="search" DisplayMemberPath="name" Width="250" Margin="0,0,8,0" />
+                    <Button x:Name="FilterGroup" Margin="0,0,8,0" Click="FilterGroup_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Фильтр"/>
+                            <Image Source="{StaticResource binacle}" Width="30" Height="17"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="CancelFilter" Click="CancelFilter_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Отмена"/>
+                            <Image Source="{StaticResource cancel}" Height="22" Width="22"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <DataGrid x:Name="StudentData" FontSize="16" Height="526" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Width="180" Binding="{Binding first_name}"/>
+                    <DataGridTextColumn Header="Имя" Width="180" Binding="{Binding middle_name}"/>
+                    <DataGridTextColumn Header="Отчество" Width="180" Binding="{Binding last_name}"/>
+                    <DataGridTextColumn Header="Дата рождения" Width="130" Binding="{Binding bithdate, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                    <DataGridTextColumn Header="Группа" Width="100" Binding="{Binding name}"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Button x:Name="Edit" Content="Изменить" Click="Edit_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button x:Name="addStudent" Height="42" Width="160" Click="addStudent_Click" Margin="0,0,250,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource add}" Height="35" Width="64"/>
+                        <TextBlock Text="Добавить" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                    <TextBox x:Name="StudentSelect" Width="250" Margin="0,0,8,0" Height="26"/>
+                    <Button x:Name="FilterStudent" Margin="0,0,8,0" Height="30" Click="FilterStudent_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Фильтр"/>
+                            <Image Source="{StaticResource binacle}" Width="30" Height="17" RenderTransformOrigin="0.7,0.5"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="CancelStudFilt" Height="30" Click="CancelStudFilt_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Отмена"/>
+                            <Image Source="{StaticResource cancel}" Height="22" Width="22"/>
+                        </StackPanel>
+                    </Button>
+            </StackPanel>
+        </StackPanel>
+        <Border CornerRadius="8" Visibility="Hidden" BorderThickness="1" Background="White" Margin="0,0,8,0">
+        </Border>
+    </Grid>
+</Page>

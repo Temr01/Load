@@ -1,0 +1,88 @@
+﻿<Window x:Class="Load.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Load"
+        mc:Ignorable="d"
+        Title="Меню" Height="759.38" Icon="image/clock.jpg" Width="1125">
+    <Grid Background="#FFACEEA8">
+        <Menu FontSize="18" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="26">
+            <MenuItem Header="Справочники">
+                <MenuItem Header="Студенты" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Группы" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Преподаватели" Click="MenuItem_Click_5"/>
+                <MenuItem Header="Учебный план" Click="MenuItem_Click_4"/>
+                <MenuItem Header="Специальности" Click="MenuItem_Click_3"/>
+            </MenuItem>
+            <MenuItem Header="Классный руководитель">
+                <MenuItem Header="Социальный паспорт" Click="MenuItem_Click_6"/>
+                <MenuItem Header="Классные часы"/>
+                <MenuItem Header="Посещаемость"/>
+            </MenuItem>
+            <MenuItem Header="Документация">
+                <MenuItem Header="Успеваемость по месяцам"/>
+                <MenuItem Header="Проведение занятий"/>
+                <MenuItem Header="Предварительная аттестация"/>
+                <MenuItem Header="Зачётная книга"/>
+                <MenuItem Header="Нагрузка"/>
+            </MenuItem>
+            <MenuItem Header="Отчёты">
+                <MenuItem Header="Ведомость посещаемости"/>
+                <MenuItem Header="Табель учёта">
+                    <MenuItem Header="на месяц"/>
+                    <MenuItem Header="итоговый"/>
+                </MenuItem>
+                <MenuItem Header="Успеваемость по месяцам"/>
+            </MenuItem>
+            <MenuItem Header="Инвертаризация"/>
+            <MenuItem Header="Оплата"/>
+            <MenuItem Header="Выход" Click="MenuItem_Click"/>
+        </Menu>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Border Background="#FF61D85B" CornerRadius="20" HorizontalAlignment="Center" Width="158" Height="680" Margin="10,0,10,10" VerticalAlignment="Bottom">
+                <StackPanel Margin="3">
+                    <Button FontSize="18" Width="138" Height="111" Margin="3">
+                        <StackPanel>
+                            <Image Source="image/pose.jpg" Height="85" Width="104"/>
+                            <TextBlock Text="Посещаемость" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button FontSize="18" Width="138" Height="116" Margin="3">
+                        <StackPanel>
+                            <Image Source="image/usp.png" Height="90" Width="114"/>
+                            <TextBlock Text="Успеваемость" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button FontSize="18" Width="138" Height="114" Margin="3">
+                        <StackPanel>
+                            <Image Source="image/uspevaemost.jpg" Height="82" Width="107"/>
+                            <TextBlock Text="Занятия" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button FontSize="18" Width="138" Height="113" Margin="3">
+                        <StackPanel>
+                            <Image Source="image/attes.jpg" Height="87" Width="114"/>
+                            <TextBlock Text="Аттестация" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button FontSize="18" Width="138" Height="109" Margin="3">
+                        <StackPanel>
+                            <Image Source="image/load.jpg" Height="74" Width="87"/>
+                            <TextBlock Text="Нагрузка" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button FontSize="18" Width="138" Height="60" Margin="2" Click="Button_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="image/unnamed.jpg" Height="44" Width="43"/>
+                            <TextBlock Text="Выйти" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <Border Background="#FF61D85B" CornerRadius="20" HorizontalAlignment="Center" Width="910" Height="680" Margin="10,0,10,10" VerticalAlignment="Bottom">
+                <Frame x:Name="Main" Margin="5"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

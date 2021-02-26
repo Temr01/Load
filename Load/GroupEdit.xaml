@@ -1,0 +1,42 @@
+﻿<Window x:Class="Load.GroupEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Load"
+        mc:Ignorable="d"
+        Title="Редактировать" FontSize="18" Height="420" Width="600">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Left" Margin="10">
+                    <TextBlock Text="Группа" Margin="6"/>
+                    <TextBlock Text="Специальность" Margin="8"/>
+                    <TextBlock Text="Курс" Margin="8"/>
+                    <TextBlock Text="Кл_руководитель" Margin="8"/>
+                    <TextBlock Text="Год зачисления" Margin="8"/>
+                    <TextBlock Text="Форма обучения" Margin="8"/>
+                    <TextBlock Text="Учебный план" Margin="8"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Margin="10">
+                    <TextBox x:Name="Group" Width="380" Margin="5" IsEnabled="False"/>
+                    <ComboBox x:Name="Spec" Width="380" Margin="5" DisplayMemberPath="name"/>
+                    <ComboBox x:Name="Cours" Width="380" Margin="5">
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox x:Name="Techear" Width="380" Margin="5" DisplayMemberPath="FIO"/>
+                    <TextBox x:Name="Year" Width="380" Margin="5"/>
+                    <ComboBox x:Name="FormLearn" Width="380" Margin="5" DisplayMemberPath="form"/>
+                    <DatePicker x:Name="Plan" Width="380" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="OK" Width="150" Content="OK" Margin="10" Click="OK_Click"/>
+                <Button x:Name="Cancel" Width="150" Content="Отмена" Margin="10" Click="Cancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
