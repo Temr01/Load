@@ -47,6 +47,7 @@ namespace Load.Pages
             DataTable group = new DataTable();
             group.Load(read);
             Group.ItemsSource = group.DefaultView;
+            ////
         }
 
         private DataTable studentData(int gruppa)
@@ -82,7 +83,7 @@ namespace Load.Pages
                     group.Font.Italic = true;
                     group.Font.Bold = true;
                     group.Font.Size = 18;
-                    row+=2;
+                    row += 2;
 
                     sheet.Cells[1][row] = "ФИО";
                     sheet.Cells[2][row] = "Дата рождения";
@@ -107,6 +108,7 @@ namespace Load.Pages
                 catch (Exception c)
                 { MessageBox.Show(c.Message); }
             }
+            else { MessageBox.Show("Выберите группу"); }
         }
     }
 }
